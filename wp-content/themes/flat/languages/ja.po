@@ -1,0 +1,836 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: flat\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-11 01:22+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mono-lab <mail@mono-lab.net>\n"
+"Language-Team: monolab <mail@monolab.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: I:\\xampplite\\htdocs\\flat\n"
+"X-Poedit-SearchPath-0: wp-content\\themes\\flat\n"
+
+#: wp-content\themes\flat/404.php:5
+msgid "Error 404 Not Found."
+msgstr "お探しのページが見つかりませんでした。"
+
+#: wp-content\themes\flat/404.php:7
+#: wp-content\themes\flat/archive.php:74
+#: wp-content\themes\flat/index.php:47
+#: wp-content\themes\flat/navigation.php:22
+#: wp-content\themes\flat/page-nocomment.php:31
+#: wp-content\themes\flat/page-noside-nocomment.php:31
+#: wp-content\themes\flat/page-noside.php:34
+#: wp-content\themes\flat/page.php:29
+#: wp-content\themes\flat/search.php:70
+#: wp-content\themes\flat/single.php:53
+msgid "RETURN HOME"
+msgstr "ホームに戻る"
+
+#: wp-content\themes\flat/archive.php:8
+#, php-format
+msgid "Archive for the &#8216;<span id=\"keyword\"> %s </span>&#8217; Category"
+msgstr "カテゴリー &#8216;<span id=\"keyword\"> %s </span>&#8217;"
+
+#: wp-content\themes\flat/archive.php:11
+#, php-format
+msgid "Posts Tagged &#8216;<span id=\"keyword\"> %s </span>&#8217;"
+msgstr "タグ &#8216;<span id=\"keyword\"> %s </span>&#8217;"
+
+#: wp-content\themes\flat/archive.php:14
+#: wp-content\themes\flat/archive.php:17
+#: wp-content\themes\flat/archive.php:20
+#, php-format
+msgid "Archive for &#8216;<span id=\"keyword\"> %s </span>&#8217;"
+msgstr "アーカイブ &#8216;<span id=\"keyword\"> %s </span>&#8217;"
+
+#: wp-content\themes\flat/archive.php:14
+msgid "F jS, Y"
+msgstr "Y年 n月j日"
+
+#: wp-content\themes\flat/archive.php:17
+msgid "F, Y"
+msgstr "Y年 n月"
+
+#: wp-content\themes\flat/archive.php:20
+msgid "Y"
+msgstr "Y年"
+
+#: wp-content\themes\flat/archive.php:23
+msgid "Author Archive"
+msgstr "投稿者別アーカイブ"
+
+#: wp-content\themes\flat/archive.php:26
+msgid "Blog Archives"
+msgstr "ブログアーカイブ"
+
+#: wp-content\themes\flat/archive.php:36
+#: wp-content\themes\flat/index.php:9
+#: wp-content\themes\flat/page-nocomment.php:14
+#: wp-content\themes\flat/page-noside-nocomment.php:14
+#: wp-content\themes\flat/page-noside.php:14
+#: wp-content\themes\flat/page.php:9
+#: wp-content\themes\flat/search.php:15
+#: wp-content\themes\flat/single.php:23
+msgid "Read more"
+msgstr "続きを読む"
+
+#: wp-content\themes\flat/archive.php:61
+#: wp-content\themes\flat/comments.php:33
+#: wp-content\themes\flat/index.php:34
+#: wp-content\themes\flat/page-noside.php:21
+#: wp-content\themes\flat/page.php:16
+#: wp-content\themes\flat/search.php:42
+#: wp-content\themes\flat/single.php:40
+msgid "Write comment"
+msgstr "コメントを書く"
+
+#: wp-content\themes\flat/archive.php:61
+#: wp-content\themes\flat/index.php:34
+#: wp-content\themes\flat/page-noside.php:21
+#: wp-content\themes\flat/page.php:16
+#: wp-content\themes\flat/search.php:42
+#: wp-content\themes\flat/single.php:40
+msgid "1 comment"
+msgstr "コメント 1"
+
+#: wp-content\themes\flat/archive.php:61
+#: wp-content\themes\flat/index.php:34
+#: wp-content\themes\flat/page-noside.php:21
+#: wp-content\themes\flat/page.php:16
+#: wp-content\themes\flat/search.php:42
+#: wp-content\themes\flat/single.php:40
+#, php-format
+msgid "% comments"
+msgstr "コメント %"
+
+#: wp-content\themes\flat/archive.php:62
+#: wp-content\themes\flat/functions.php:138
+#: wp-content\themes\flat/index.php:35
+#: wp-content\themes\flat/page-nocomment.php:20
+#: wp-content\themes\flat/page-noside-nocomment.php:20
+#: wp-content\themes\flat/page-noside.php:22
+#: wp-content\themes\flat/page.php:17
+#: wp-content\themes\flat/search.php:43
+#: wp-content\themes\flat/single.php:41
+msgid "EDIT"
+msgstr "編集"
+
+#: wp-content\themes\flat/archive.php:72
+#: wp-content\themes\flat/index.php:45
+#: wp-content\themes\flat/page-nocomment.php:29
+#: wp-content\themes\flat/page-noside-nocomment.php:29
+#: wp-content\themes\flat/page-noside.php:32
+#: wp-content\themes\flat/page.php:27
+#: wp-content\themes\flat/search.php:68
+#: wp-content\themes\flat/single.php:51
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "お探しの記事は見つかりませんでした。"
+
+#: wp-content\themes\flat/archive.php:90
+#: wp-content\themes\flat/index.php:61
+#: wp-content\themes\flat/search.php:58
+msgid "Older posts"
+msgstr "古い記事"
+
+#: wp-content\themes\flat/archive.php:91
+#: wp-content\themes\flat/index.php:62
+#: wp-content\themes\flat/search.php:59
+msgid "Newer posts"
+msgstr "新しい記事"
+
+#: wp-content\themes\flat/comments.php:7
+#: wp-content\themes\flat/comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "この記事はパスワードで保護されています。パスワードを入力するとコメント観閲する事ができます。"
+
+#: wp-content\themes\flat/comments.php:35
+msgid "Comments RSS"
+msgstr "コメント RSS"
+
+#: wp-content\themes\flat/comments.php:40
+msgid "Trackback"
+msgstr "トラックバック"
+
+#: wp-content\themes\flat/comments.php:41
+#: wp-content\themes\flat/comments.php:44
+msgid "Comments"
+msgstr "コメント"
+
+#: wp-content\themes\flat/comments.php:43
+msgid "Trackback are closed"
+msgstr "トラックバックは閉じられています"
+
+#: wp-content\themes\flat/comments.php:75
+msgid "No comments yet."
+msgstr "コメント 0"
+
+#: wp-content\themes\flat/comments.php:102
+msgid "TrackBack URL"
+msgstr "トラックバックURL"
+
+#: wp-content\themes\flat/comments.php:111
+#: wp-content\themes\flat/functions.php:123
+msgid "m/d. Y"
+msgstr "Y m/d"
+
+#: wp-content\themes\flat/comments.php:112
+msgid "[ EDIT ]"
+msgstr "[ 編集 ]"
+
+#: wp-content\themes\flat/comments.php:115
+msgid "Trackback from : "
+msgstr "トラックバック先："
+
+#: wp-content\themes\flat/comments.php:120
+msgid "No trackbacks yet."
+msgstr "トラックバック 0"
+
+#: wp-content\themes\flat/comments.php:139
+msgid "Comment are closed."
+msgstr "コメントは閉じられています。"
+
+#: wp-content\themes\flat/comments.php:150
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "コメントをする為には<a href=\"%s\">ログイン</a>してください。"
+
+#: wp-content\themes\flat/comments.php:166
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "<a href=\"%1$s\">%2$s</a>としてログイン中。"
+
+#: wp-content\themes\flat/comments.php:166
+msgid "Log out of this account"
+msgstr "このアカウントからログアウトする"
+
+#: wp-content\themes\flat/comments.php:166
+msgid "[ Log out ]"
+msgstr "[ ログアウト ]"
+
+#: wp-content\themes\flat/comments.php:172
+msgid "NAME"
+msgstr "名前"
+
+#: wp-content\themes\flat/comments.php:172
+#: wp-content\themes\flat/comments.php:173
+msgid "( required )"
+msgstr "( 必須 )"
+
+#: wp-content\themes\flat/comments.php:173
+msgid "E-MAIL"
+msgstr "E-MAIL"
+
+#: wp-content\themes\flat/comments.php:173
+msgid "- will not be published -"
+msgstr "- 公開されませんのでご安心ください -"
+
+#: wp-content\themes\flat/comments.php:174
+msgid "URL"
+msgstr "URL"
+
+#: wp-content\themes\flat/comments.php:186
+msgid "Submit Comment"
+msgstr "コメントを送信する"
+
+#: wp-content\themes\flat/footer.php:15
+msgid "Copyright &copy;&nbsp; "
+msgstr "Copyright &copy;&nbsp; "
+
+#: wp-content\themes\flat/footer.php:16
+msgid "Theme designed by <a class=\"target_blank\" href=\"http://www.mono-lab.net/\">mono-lab</a>"
+msgstr "Theme designed by <a class=\"target_blank\" href=\"http://www.mono-lab.net/\">mono-lab</a>"
+
+#: wp-content\themes\flat/footer.php:17
+msgid "Powered by <a class=\"target_blank\" href=\"http://wordpress.org/\">WordPress</a>"
+msgstr "Powered by <a class=\"target_blank\" href=\"http://wordpress.org/\">WordPress</a>"
+
+#: wp-content\themes\flat/functions.php:39
+msgid "Header menu"
+msgstr "ヘッダーメニュー"
+
+#: wp-content\themes\flat/functions.php:51
+msgid "Side top"
+msgstr "上"
+
+#: wp-content\themes\flat/functions.php:59
+msgid "Side middle left"
+msgstr "中央左"
+
+#: wp-content\themes\flat/functions.php:67
+msgid "Side middle right"
+msgstr "中央右"
+
+#: wp-content\themes\flat/functions.php:75
+msgid "Side bottom"
+msgstr "下"
+
+#: wp-content\themes\flat/functions.php:123
+msgid " g:ia"
+msgstr " g:ia"
+
+#: wp-content\themes\flat/functions.php:130
+#: wp-content\themes\flat/functions.php:132
+#: wp-content\themes\flat/functions.php:135
+msgid "REPLY"
+msgstr "返信"
+
+#: wp-content\themes\flat/functions.php:137
+msgid "QUOTE"
+msgstr "引用"
+
+#: wp-content\themes\flat/functions.php:144
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは管理者の承認を待っています。"
+
+#: wp-content\themes\flat/header.php:9
+#, php-format
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: wp-content\themes\flat/navigation.php:16
+msgid "PAGE NAVI"
+msgstr "PAGE NAVI"
+
+#: wp-content\themes\flat/search.php:6
+msgid "Search results for "
+msgstr "検索結果"
+
+#: wp-content\themes\flat/search.php:6
+msgid " hit"
+msgstr "件"
+
+#: wp-content\themes\flat/sidebar.php:38
+#: wp-content\themes\flat/sidebar.php:42
+#: wp-content\themes\flat/sidebar.php:46
+#: wp-content\themes\flat/sidebar.php:47
+msgid "SEARCH"
+msgstr "サイト内検索"
+
+#: wp-content\themes\flat/sidebar.php:78
+msgid "RECENT ENTRY"
+msgstr "RECENT ENTRY"
+
+#: wp-content\themes\flat/sidebar.php:89
+msgid "CATEGORY"
+msgstr "CATEGORY"
+
+#: wp-content\themes\flat/sidebar.php:97
+msgid "ARCHIVES"
+msgstr "ARCHIVES"
+
+#: wp-content\themes\flat/sidebar.php:106
+msgid "LINKS"
+msgstr "LINKS"
+
+#: wp-content\themes\flat/single.php:10
+msgid "HOME"
+msgstr "ホーム"
+
+#: wp-content\themes\flat/admin/theme-options.php:28
+msgid "Change this sentence and title from admin Theme option page."
+msgstr "管理画面のテーマオプションページからこの文章を変更してください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:82
+#: wp-content\themes\flat/admin/theme-options.php:131
+msgid "Theme Options"
+msgstr "テーマオプション"
+
+#: wp-content\themes\flat/admin/theme-options.php:94
+msgid "Use pager"
+msgstr "ページナビ"
+
+#: wp-content\themes\flat/admin/theme-options.php:99
+msgid "Use normal link"
+msgstr "通常のリンク"
+
+#: wp-content\themes\flat/admin/theme-options.php:136
+msgid "Updated"
+msgstr "設定を更新しました"
+
+#: wp-content\themes\flat/admin/theme-options.php:160
+msgid "Basic Setup"
+msgstr "基本設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:161
+msgid "Logo"
+msgstr "ロゴの設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:162
+msgid "Header image"
+msgstr "ヘッダーイメージ"
+
+#: wp-content\themes\flat/admin/theme-options.php:176
+msgid "Site main color"
+msgstr "サイトのメインカラー"
+
+#: wp-content\themes\flat/admin/theme-options.php:179
+#: wp-content\themes\flat/admin/theme-options.php:190
+#: wp-content\themes\flat/admin/theme-options.php:428
+#: wp-content\themes\flat/admin/theme-options.php:490
+#: wp-content\themes\flat/admin/theme-options.php:500
+#: wp-content\themes\flat/admin/theme-options.php:510
+msgid "Save Color"
+msgstr "色の設定を保存する"
+
+#: wp-content\themes\flat/admin/theme-options.php:181
+#: wp-content\themes\flat/admin/theme-options.php:192
+#: wp-content\themes\flat/admin/theme-options.php:492
+#: wp-content\themes\flat/admin/theme-options.php:502
+#: wp-content\themes\flat/admin/theme-options.php:512
+msgid "Default color"
+msgstr "初期色"
+
+#: wp-content\themes\flat/admin/theme-options.php:186
+msgid "Site secondary color"
+msgstr "サイトのサブカラー"
+
+#: wp-content\themes\flat/admin/theme-options.php:187
+msgid "We use this color for link hover effect."
+msgstr "この色は記事内のリンクをオンマウスしたときに利用します。"
+
+#: wp-content\themes\flat/admin/theme-options.php:197
+msgid "Font size"
+msgstr "フォントサイズ"
+
+#: wp-content\themes\flat/admin/theme-options.php:198
+msgid "Font size of single post and wp-page."
+msgstr "投稿記事、固定ページの文字サイズを指定してください。<br />数字が大きくなるほど文字サイズも大きくなります。"
+
+#: wp-content\themes\flat/admin/theme-options.php:206
+msgid "Display Setup"
+msgstr "各項目の表示設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:209
+msgid "Display author name"
+msgstr "投稿者名を表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:210
+msgid "Display category"
+msgstr "カテゴリーを表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:211
+msgid "Display tags"
+msgstr "タグを表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:212
+msgid "Display date"
+msgstr "日付を表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:213
+msgid "Display comment"
+msgstr "コメントを表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:214
+msgid "Display comment time"
+msgstr "コメントに時間を表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:215
+msgid "Display next previous post link at single page"
+msgstr "次の記事、前の記事リンクを記事の詳細ページに表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:216
+msgid "Display breadcrumb at single page"
+msgstr "パンくずナビを記事の詳細ページに表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:217
+msgid "Display return top link  at bottom of the page"
+msgstr "「ページ上部へ戻る」リンクをページ下部に表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:218
+msgid "Display search form at sidebar"
+msgstr "検索フォームを右サイドに表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:219
+msgid "Display rss at sidebar"
+msgstr "RSSアイコンを右サイド表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:220
+msgid "Display site description under site title"
+msgstr "サイトのタイトルの下にサイトの説明文を表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:227
+msgid "Side information setting"
+msgstr "右サイドのインフォメーション設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:229
+msgid "Please make this field blank if you don't want to display at the site."
+msgstr "サイトに表示させたくない場合は、このエリアを空欄にしてください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:231
+msgid "Title of information area"
+msgstr "インフォメーション部分のタイトル"
+
+#: wp-content\themes\flat/admin/theme-options.php:242
+#: wp-content\themes\flat/admin/theme-options.php:244
+msgid "Pager type"
+msgstr "ページナビの種類"
+
+#: wp-content\themes\flat/admin/theme-options.php:272
+msgid "twitter and facebook setup"
+msgstr "twitterとfacebookの設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:274
+msgid "When it is blank, twitter and facebook icon will not displayed on a site."
+msgstr "空欄の場合は、twitterとfacebookアイコンは表示されません。"
+
+#: wp-content\themes\flat/admin/theme-options.php:277
+msgid "your twitter URL"
+msgstr "あなたのtwitter URL"
+
+#: wp-content\themes\flat/admin/theme-options.php:281
+msgid "your facebook URL"
+msgstr "あなたのfacebook URL"
+
+#: wp-content\themes\flat/admin/theme-options.php:290
+msgid "Using Google custom search"
+msgstr "Googleカスタム検索の設定"
+
+#: wp-content\themes\flat/admin/theme-options.php:292
+msgid "If you want to use google custom search for your wordpress, enter your google custom search ID.<br /><a href=\"http://www.google.com/cse/\" target=\"_blank\">Read more about Google custom search page.</a>"
+msgstr "Googleカスタム検索をサイト内検索として利用したい場合は、Googleカスタム検索IDを入力してください。<br /><a href=\"http://www.google.com/cse/\" target=\"_blank\">Googleカスタム検索についてはこちらをご参照ください。</a>"
+
+#: wp-content\themes\flat/admin/theme-options.php:293
+msgid "Google custom search ID"
+msgstr "Googleカスタム検索ID"
+
+#: wp-content\themes\flat/admin/theme-options.php:298
+#: wp-content\themes\flat/admin/theme-options.php:515
+msgid "Save Changes"
+msgstr "設定を保存する"
+
+#: wp-content\themes\flat/admin/theme-options.php:310
+msgid "Step 1 : Upload image to use for logo."
+msgstr "ステップ１：ロゴとして利用する画像のアップロード"
+
+#: wp-content\themes\flat/admin/theme-options.php:312
+msgid "Upload image to use for logo from your computer.<br />You can resize your logo image in step 2 and adjust position in step 3."
+msgstr "自分のコンピュータから登録したいロゴ画像を選択してください。<br />ロゴ画像を選択した後にアップロードボタンをクリックしてロゴ画像を登録します。<br />登録したロゴ画像はステップ２よりリサイズ・切り抜きを行う事ができ、ステップ３より表示位置を調整する事ができます。"
+
+#: wp-content\themes\flat/admin/theme-options.php:314
+msgid "Select image to use for logo from your computer."
+msgstr "自分のコンピュータから画像を選択: "
+
+#: wp-content\themes\flat/admin/theme-options.php:316
+msgid "Upload"
+msgstr "アップロードする"
+
+#: wp-content\themes\flat/admin/theme-options.php:320
+msgid "Uploaded image."
+msgstr "アップロードされたロゴ"
+
+#: wp-content\themes\flat/admin/theme-options.php:324
+#, php-format
+msgid "Original image size : width %1$dpx, height %2$dpx"
+msgstr "オリジナルの画像サイズ: 横幅 %1$dpx, 縦幅 %2$dpx"
+
+#: wp-content\themes\flat/admin/theme-options.php:328
+msgid "The image has not been uploaded yet.<br />A normal text will be used for a site logo."
+msgstr "画像が登録されていません。<br />画像が登録されていない場合は、通常のテキストがサイトのロゴとして表示されます。"
+
+#: wp-content\themes\flat/admin/theme-options.php:337
+msgid "Step 2 : Resize uploaded image."
+msgstr "ステップ２：アップロードした画像のリサイズ"
+
+#: wp-content\themes\flat/admin/theme-options.php:340
+msgid "You can resize uploaded image.<br />If you don't need to resize, go to step 3."
+msgstr "アップロードされた画像はリサイズ・切り抜きすることができます。<br />画像の上で切り抜く範囲を選択して、青色の「リサイズ」ボタンをクリックしてください。<br />リサイズが不要の場合は、ステップ２は飛ばしてステップ３へお進みください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:342
+msgid "Please drag the range to cut off."
+msgstr "切り取る範囲をドラッグしてください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:347
+msgid "Ratio"
+msgstr "比率"
+
+#: wp-content\themes\flat/admin/theme-options.php:348
+msgid "Width"
+msgstr "横幅"
+
+#: wp-content\themes\flat/admin/theme-options.php:349
+msgid "Height"
+msgstr "縦幅"
+
+#: wp-content\themes\flat/admin/theme-options.php:352
+msgid "Resize"
+msgstr "リサイズ"
+
+#: wp-content\themes\flat/admin/theme-options.php:357
+#, php-format
+msgid "Resized image : width %1$dpx, height %2$dpx"
+msgstr "リサイズされた画像サイズ: 横幅 %1$dpx, 縦幅 %2$dpx"
+
+#: wp-content\themes\flat/admin/theme-options.php:371
+msgid "Step 3 : Adjust position of logo."
+msgstr "ステップ３：位置の調整"
+
+#: wp-content\themes\flat/admin/theme-options.php:374
+msgid "Drag the logo image and adjust the position."
+msgstr "ロゴ画像をドラッグして位置を調整してください。<br />位置の調整が完了しましたら下にある「ロゴの位置を決定する」ボタンをクリックして作業を完了してください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:378
+msgid "Logo size is too big. Please resize your logo image."
+msgstr "登録された画像が大き過ぎます。リサイズして小さくしてください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:382
+msgid "Top"
+msgstr "上"
+
+#: wp-content\themes\flat/admin/theme-options.php:383
+msgid "Left"
+msgstr "左側に表示する"
+
+#: wp-content\themes\flat/admin/theme-options.php:386
+msgid "Save the position"
+msgstr "ロゴの位置を決定する"
+
+#: wp-content\themes\flat/admin/theme-options.php:395
+msgid "Delete logo image."
+msgstr "画像を削除する"
+
+#: wp-content\themes\flat/admin/theme-options.php:397
+msgid "If you delete the logo image, normal text will be used for a site logo."
+msgstr "登録したロゴ画像を削除した場合、ロゴの代わりに通常のテキストが表示されます。"
+
+#: wp-content\themes\flat/admin/theme-options.php:398
+msgid "Are you sure to delete logo image?"
+msgstr "登録したロゴ画像を削除してもよろしいでしょうか？"
+
+#: wp-content\themes\flat/admin/theme-options.php:398
+#: wp-content\themes\flat/admin/theme-options.php:453
+msgid "Delete Image"
+msgstr "画像を削除する"
+
+#: wp-content\themes\flat/admin/theme-options.php:412
+msgid "Register header background image or select background color"
+msgstr "ヘッダーの背景画像もしくは背景色を登録してください"
+
+#: wp-content\themes\flat/admin/theme-options.php:417
+msgid "Background Image"
+msgstr "背景画像"
+
+#: wp-content\themes\flat/admin/theme-options.php:420
+msgid "Save Image"
+msgstr "画像を保存する"
+
+#: wp-content\themes\flat/admin/theme-options.php:426
+msgid "Background Color"
+msgstr "背景色"
+
+#: wp-content\themes\flat/admin/theme-options.php:430
+msgid "Make this field blank to delete background color."
+msgstr "背景色を使わない場合は、上記の入力欄を空欄にして保存してください。"
+
+#: wp-content\themes\flat/admin/theme-options.php:453
+msgid "Are you sure to delete this image?"
+msgstr "登録した画像を削除してもよろしいでしょうか？"
+
+#: wp-content\themes\flat/admin/theme-options.php:487
+msgid "Logo text color"
+msgstr "ロゴテキストの色"
+
+#: wp-content\themes\flat/admin/theme-options.php:497
+msgid "Border color"
+msgstr "線の色"
+
+#: wp-content\themes\flat/admin/theme-options.php:507
+msgid "Description text color"
+msgstr "サイト説明文の色"
+
+#: wp-content\themes\flat/admin/theme-options.php:647
+#, php-format
+msgid "You uploaded %s but allowed file format is PNG, GIF and JPG."
+msgstr "アップロードできるファイル形式は、gif, jpg, png の３種類のみになります。"
+
+#: wp-content\themes\flat/admin/theme-options.php:661
+#, php-format
+msgid "Directory %s is not writable. Please check permission."
+msgstr "ディレクトリ %s のパーミッションが書き込み不可になっています。パーミッションを書き込み可能な数値に変更してください。"
+
+#: wp-content\themes\flat/admin/update_notifier.php:16
+msgid "Theme Update<span class=\"update-plugins count-1\"><span class=\"update-count\">1</span></span>"
+msgstr "テーマ更新<span class=\"update-plugins count-1\"><span class=\"update-count\">1</span></span>"
+
+#: wp-content\themes\flat/admin/update_notifier.php:43
+msgid "Theme Update Information"
+msgstr "テーマ更新情報"
+
+#: wp-content\themes\flat/admin/update_notifier.php:45
+msgid "Current theme version is"
+msgstr "現在ご利用中のバージョン："
+
+#: wp-content\themes\flat/admin/update_notifier.php:45
+msgid "Now you can update to"
+msgstr "最新版のバージョン："
+
+#: wp-content\themes\flat/admin/update_notifier.php:48
+msgid "Please take backup of your theme before updating to latest version!"
+msgstr "アップデートする前には、必ず古いテーマのバックアップをとってから行ってください。"
+
+#: wp-content\themes\flat/admin/update_notifier.php:49
+msgid "Download latest version"
+msgstr "テーマの最新版をダウンロードする"
+
+#: wp-content\themes\flat/admin/update_notifier.php:51
+msgid "Changelog"
+msgstr "更新内容"
+
+#: wp-content\themes\flat/functions/header-logo.php:231
+#, php-format
+msgid "Cannot create upload directory. Please make sure <code>%s</code> is writable."
+msgstr "画像を収納するディレクトリを新規作成できませんでした。<br />かならず、「 <code>%s</code> 」を書き込み可能なパーミッションに変更してください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:243
+#, php-format
+msgid "Cannot save uploaded file. Please make sure <code>%s</code> is writable."
+msgstr "アップロードしたファイルを保存できませんでした。<br />からなず、「 <code>%s</code> 」を書き込み可能なパーミッションに変更してください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:254
+msgid "Uploaded file type is not allowed. Allowed file types are PNG, JPG and GIF."
+msgstr "アップロードできるファイル形式は、gif, jpg, png の３種類のみになります。"
+
+#: wp-content\themes\flat/functions/header-logo.php:266
+#, php-format
+msgid "Cannot delete existing file <code>%s</code>"
+msgstr "「 <code>%s</code> 」を削除する事ができませんでした。"
+
+#: wp-content\themes\flat/functions/header-logo.php:276
+msgid "Sorry, but cannot save uploaded file."
+msgstr "大変申し訳ございませんが、保存できませんでした。"
+
+#: wp-content\themes\flat/functions/header-logo.php:282
+msgid "Logo file was successfully uploaded."
+msgstr "保存しました。"
+
+#: wp-content\themes\flat/functions/header-logo.php:324
+#, php-format
+msgid "Failed to delete image. Please check permisson of %s. All files must be writable."
+msgstr "画像の削除に失敗しました。「 %s 」を書き込み可能なパーミッションに変更してください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:331
+msgid "Images are successfully deleted."
+msgstr "画像を削除しました。"
+
+#: wp-content\themes\flat/functions/header-logo.php:352
+#: wp-content\themes\flat/functions/header-logo.php:357
+msgid "Logo file not exists."
+msgstr "ロゴファイルは登録されていません。"
+
+#: wp-content\themes\flat/functions/header-logo.php:377
+msgid "Cannot delete existing resized logo."
+msgstr "削除する事ができませんでした。"
+
+#: wp-content\themes\flat/functions/header-logo.php:393
+msgid "Logo image is successfully resized."
+msgstr "ロゴ画像のサイズを変更しました。"
+
+#: wp-content\themes\flat/functions/header-logo.php:395
+#, php-format
+msgid "Failed to save resized logo. Please check permission of <code>%s</code>"
+msgstr "ロゴ画像のサイズを変更できませんでした。<br />「 <code>%s</code> 」を書き込み可能なパーミッションに変更してください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:408
+msgid "Uploaded file size is larger than limit set in php.ini."
+msgstr "サーバーが制限している画像サイズを超えているため、アップロードできません。"
+
+#: wp-content\themes\flat/functions/header-logo.php:411
+msgid "Uploaded file size is larger than post file size."
+msgstr "画像サイズが大きすぎます。"
+
+#: wp-content\themes\flat/functions/header-logo.php:414
+msgid "The file has been uploaded only partially. Connection error may have occured"
+msgstr "画像を正常にアップロードできませんでした。再度お試しください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:417
+msgid "Uploaded file size is too large."
+msgstr "画像サイズが大きすぎます。"
+
+#: wp-content\themes\flat/functions/header-logo.php:420
+msgid "No temporary directory exists. Please check PHP Setting is valid."
+msgstr "該当するディレクトが存在しません。"
+
+#: wp-content\themes\flat/functions/header-logo.php:423
+msgid "Failed to write to disk. OS file setting or something is wrong."
+msgstr "データベースに情報を保存できませんでした。"
+
+#: wp-content\themes\flat/functions/header-logo.php:426
+msgid "PHP extension module stops uploading. Check PHP setting."
+msgstr "アップロードが途中で中断されました。PHPの設定をご確認ください。"
+
+#: wp-content\themes\flat/functions/header-logo.php:429
+msgid "Upload failed. Sorry, but reasons cannot be detected."
+msgstr "アップロードに失敗しました。原因は不明です。"
+
+#~ msgid "M"
+#~ msgstr "m"
+
+#~ msgid " Y"
+#~ msgstr " Y"
+
+#~ msgid "Log out"
+#~ msgstr "ログアウト"
+
+#~ msgid "Display header menu"
+#~ msgstr "ヘッダーメニューを表示する"
+
+#~ msgid "Theme options have been saved."
+#~ msgstr "設定が保存されました。"
+
+#~ msgid ""
+#~ "Check if you would like to use original image for logo instead of using "
+#~ "plain text.<br />( Don't forget to upload image to, /wp-content/themes/"
+#~ "flat/img/ )"
+#~ msgstr ""
+#~ "ブログのタイトルに画像を使いたい場合は、下にチェックを入れてください。"
+#~ "<br />注意：必ず画像を、wp-content/themes/flat/img/ にアップロードし、下に"
+#~ "アップロードした画像名をご記入ください。"
+
+#~ msgid "Yes"
+#~ msgstr "はい"
+
+#~ msgid "Input your logo file name."
+#~ msgstr "画像の名前"
+
+#~ msgid "Show Information on sidebar."
+#~ msgstr "右サイドにインフォメーションを表示する。"
+
+#~ msgid "Information contents. ( HTML tag is available. )"
+#~ msgstr "インフォメーションの内容。（HTMLタグの利用可）"
+
+#~ msgid "Show Search form on sidebar."
+#~ msgstr "右サイドに検索欄を表示する。"
+
+#~ msgid ""
+#~ "Use <a href=\"http://www.google.com/cse/\">Google Custom Search</a><br />"
+#~ "(If you check this option,don't forget to write your Google Custom Search "
+#~ "ID below.)"
+#~ msgstr ""
+#~ "Googleカスタム検索を利用する。<br />利用する場合は、右のアドレスよりGoogle"
+#~ "カスタム検索IDを取得してください。 <a href=\"http://www.google.com/cse/"
+#~ "\">Googleカスタム検索</a>"
+
+#~ msgid "Show RSS button on sidebar."
+#~ msgstr "右サイドにRSSボタンを表示する。"
+
+#~ msgid "Show Twitter button on sidebar."
+#~ msgstr "右サイドにTwitterボタンを表示する。"
+
+#~ msgid "Show Facebook button on sidebar."
+#~ msgstr "右サイドにFacebookボタンを表示する。"
+
+#~ msgid "Show bread crumb at single post page."
+#~ msgstr "パンくずリンクを記事の詳細ページに表示する。"
+
+#~ msgid "Show time on comment."
+#~ msgstr "投稿されたコメントに時間を表示する。"
+
+#~ msgid ""
+#~ "Check if you want to show Return top button on right bottom of the site."
+#~ msgstr "画面右下にページ上部へのリンクを表示する。"

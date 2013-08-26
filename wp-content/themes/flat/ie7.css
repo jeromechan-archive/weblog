@@ -1,0 +1,9 @@
+#social_link { display:inline; max-width:90px; }
+
+.post .title { background:url(img/title2.gif) no-repeat left 45px; }
+
+.header_menu ul ul .parent_menu > a
+  { margin:0 0 -4px 0; position:relative; }
+
+.header_menu > ul > li.active_menu > a { background:#f7f7f7; }
+
