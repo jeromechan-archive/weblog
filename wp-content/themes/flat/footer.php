@@ -57,8 +57,9 @@
 <?php wp_footer(); ?>
 
 <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4418c855f31d691ab6c4e837e3a01022' type='text/javascript'%3E%3C/script%3E"));
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F02398c2183303e5db981f815f39dcafd' type='text/javascript'%3E%3C/script%3E"));
 </script>
+
 </body>
 </html>
