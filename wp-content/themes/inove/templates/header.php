@@ -63,7 +63,7 @@
 	var searchbox = MGJS.$("searchbox");
 	var searchtxt = MGJS.getElementsByClassName("textfield", "input", searchbox)[0];
 	var searchbtn = MGJS.getElementsByClassName("button", "input", searchbox)[0];
-	var tiptext = "<?php _e('Type text to search here...', 'inove'); ?>";
+	var tiptext = "<?php _e('从这里搜索你感兴趣的', 'inove'); ?>";//Type text to search here...
 	if(searchtxt.value == "" || searchtxt.value == tiptext) {
 		searchtxt.className += " searchtip";
 		searchtxt.value = tiptext;

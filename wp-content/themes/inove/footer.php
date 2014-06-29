@@ -15,7 +15,7 @@
 <!-- footer START -->
 <div id="footer">
 	<a id="gotop" href="#" onclick="MGJS.goTop();return false;"><?php _e('Top', 'inove'); ?></a>
-	<a id="powered" href="http://wordpress.org/">WordPress</a>
+<!--	<a id="powered" href="http://wordpress.org/">WordPress</a>-->
 	<div id="copyright">
 		<?php
 			global $wpdb;
@@ -33,11 +33,13 @@
 				echo $copyright;
 				bloginfo('name');
 			}
+            printf(__(' | Powered by <a href="%1$s">WordPress</a> | UI Redesigned by <a href="%2$s">Jerome Chan', 'inove'), 'http://wordpress.org/','http://weblog.cn/?page_id=20');
 		?>
 	</div>
-	<div id="themeinfo">
-		<?php printf(__('Powered by <a href="http://wordpress.org/">WordPress</a> and <a href="%1$s">NeoEase</a> | UI Redesigned by <a href="%4$s">Neilsen.Chan<a href="%1$s"> | Valid <a href="%2$s">XHTML 1.1</a> and <a href="%3$s">CSS 3</a>.', 'inove'), 'http://www.neoease.com/', 'http://validator.w3.org/check?uri=referer', 'http://jigsaw.w3.org/css-validator/check/referer?profile=css3', 'http://neilsenchan.info/'); ?>
-	</div>
+
+<!--	<div id="themeinfo">-->
+<!--	</div>-->
+
 </div>
 <!-- footer END -->
 

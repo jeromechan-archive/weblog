@@ -18,7 +18,7 @@ abbr[title], acronym[title] {
 	cursor:help;
 }
 body {
-	background:#ECECEC;/*#BEC3C6 url(img/bg.jpg) repeat-x;*/
+	background:#F0F0F0;/*#BEC3C6 url(img/bg.jpg) repeat-x;*/
 	color:#555;
 	font-family:Verdana,"BitStream vera Sans",Tahoma,Helvetica,Sans-serif;
 	font-size:12px;
