@@ -1,8 +1,8 @@
 # BEGIN WordPress
 
 # END WordPress
-
-# BEGIN wtwp_cache
+#
+## BEGIN wtwp_cache
 <IfModule mod_mime.c>
 
 	# Text
@@ -126,4 +126,4 @@
 	Deny from all
 </Files>
 Options -Indexes
-# END wtwp_security
+## END wtwp_security
