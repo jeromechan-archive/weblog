@@ -1,1 +1,1 @@
-Sitemap:http://www.aboutcoder.com/sitemap.php
+Sitemap:http://www.aboutcoder.com/sitemap.xml
