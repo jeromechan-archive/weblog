@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2014 Tuniu Inc. All rights reserved.
+ * Copyright © 2014 Jerome Chan. All rights reserved.
  *
  * @author chenjinlong
  * @date 7/28/14
