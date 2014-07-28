@@ -11,11 +11,7 @@
 <?php require('wp-blog-header.php');
 header('Content-type: text/xml; charset=' . get_settings('blog_charset'), true);?>
 <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
-<!-- generator="http://www.socialpatterns.com/"-->
-<urlset xmlns="http://www.google.com/schemas/sitemap/0.84"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84
-http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc><?php bloginfo('url') ?></loc>
         <lastmod><?php echo mysql2date('Y-m-d\TH:i:s\Z', get_lastpostmodified('GMT'), false); ?></lastmod>
