@@ -30,7 +30,7 @@ if(is_home()) echo '<div id="indexposts" class="clear fl">';
 
 <?php while(have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php  
+		<?php
 		if(is_category()) :
 			pw_actionBlock('pw_category_post');
 		elseif(is_author()) :

@@ -500,6 +500,12 @@ article {
 		article .meta a {
 			border-bottom: 1px dotted;
 			}
+
+        /*Post Seperator add by chenjinlong*/
+        .post-seperator {
+            padding-top: 15px;
+            border-top: 1px dashed rgb(221,221,221);
+        }
 	
 	article.pw .storycontent {
 		clear: none;
