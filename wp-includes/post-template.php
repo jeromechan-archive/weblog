@@ -403,6 +403,9 @@ function get_post_class( $class = '', $post_id = null ) {
 	$classes[] = 'type-' . $post->post_type;
 	$classes[] = 'status-' . $post->post_status;
 
+    // 增加post的分割线 modified by chenjinlong
+    $classes[] = 'post-seperator';
+
 	// Post Format
 	if ( post_type_supports( $post->post_type, 'post-formats' ) ) {
 		$post_format = get_post_format( $post->ID );
