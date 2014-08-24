@@ -1006,9 +1006,9 @@ function pw_get_element($pw_add_name, $pw_add_class = null) {
 		echo '<li id="copyright" class="foot">';
     	echo $handle;
 		$link = '<a href="'.home_url().'">'.get_bloginfo('name').'</a>';
-		printf(__('&copy; %1$d %2$s. All Rights Reserved.', "presswork"), date('Y'), $link);
+		printf(__('&copy; 2013 - %1$d %2$s.' . ' All Rights Reserved.', "presswork"), date('Y'), $link);
 		echo ' ';
-		printf(__('Created using %s.', "presswork"), '<a href="http://presswork.me">PressWork</a>'); 
+		printf(__('Redesign from %s.', "presswork"), 'PressWork');
 		echo '</li>';
 	}
 	do_action('add_pw_get_element', $pw_add_name, $pw_add_class);
