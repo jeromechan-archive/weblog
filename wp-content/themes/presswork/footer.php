@@ -24,7 +24,8 @@
     $(function() {
         $("img").lazyload({
                 "effect" : "fadeIn",
-                "placeholder" : "<?php bloginfo('template_url'); ?>/admin/images/loader.gif"
+                "placeholder" : "<?php bloginfo('template_url'); ?>/admin/images/loader.gif",
+                "threshold" : 200
             }
         );
     });
