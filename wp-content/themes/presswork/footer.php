@@ -18,7 +18,7 @@
 <!-- PressWork framework created by c.bavota & Brendan Sera-Shriar - http://presswork.me -->
 
 <!-- 加载jquery.lazyload plugin. added by chenjinlong -->
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/admin/js/jquery.min.js"></script>
+<!--<script type="text/javascript" src="--><?php //bloginfo('template_url'); ?><!--/admin/js/jquery.min.js"></script>-->
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/admin/js/jquery.lazyload.min.js"></script>
 <script type="text/javascript">
     $(function() {
