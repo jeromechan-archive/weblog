@@ -48,7 +48,7 @@ if(is_admin() && isset($_GET['activated']) && $pagenow == "themes.php" ) {
 if(empty($pw_default_options)) {
 	$pw_default_options = array(
 		"layout_option" => "maincontent,firstsidebar",
-		"header_option" => "header_logo,nav",
+		"header_option" => "header_logo,nav,breadcrumb",
 		"footer_option" => "extendedfooter,copyright",
 		"content_width" => "700",
 		"first_sidebar_width" => "230",
@@ -824,6 +824,25 @@ function pw_function_handle($function) {
 		return;
 }
 
+/**
+ * Deal with breadcrumb for single post | page.
+ * @author chenjinlong
+ */
+function pw_get_breadcrumb(){
+    $home = '<a href="'.home_url().'">首页</a>' . ' &raquo; ';
+    $category_parent_top = '';
+    if(is_single()){
+        $categorys = get_the_category();
+        $category_parent_top = get_category_parents($categorys[0]->term_id, true, ' &raquo; ');
+        $title = the_title('', '', false);
+    }elseif(is_page()){
+        $title = the_title('', '', false);
+    }else{
+        $title = '';
+    }
+    return $home . $category_parent_top . $title;
+}
+
 if(current_user_can('edit_theme_options') && pw_theme_option('toolbox')=="on") {
 	add_action('pw_body_bottom', 'pw_toolbox');
 	if(!empty($_GET['action']) && $_GET['action']=="pw-activate" && empty($pw_welcome)) 
@@ -966,6 +985,15 @@ function pw_get_element($pw_add_name, $pw_add_class = null) {
 			echo '</li>';
 		}	
 	}
+    // Add page breadcrumb for single post top. Added by chenjinlong
+    if($pw_add_name=="breadcrumb"){
+        echo '<li>';
+        if(is_single() || is_page()){
+            $handle = pw_get_breadcrumb();
+            echo $handle;
+        }
+        echo '</li>';
+    }
 	if($pw_add_name=="subnav") {
 		$handle = pw_handles('Secondary Nav Menu', 'subnav', true, 'header'); 
 		if(function_exists('wp_nav_menu')) {
