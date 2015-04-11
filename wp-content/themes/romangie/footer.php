@@ -12,7 +12,7 @@
 	</div>	
 	<div class="siteinfo row">
 		<div class="col-xs-10 col-xs-offset-1">
-		<p><?php printf( __( 'Copyright &copy; %1$s. Powered by <a href="%2$s">WordPress</a> &amp; <a href="%3$s">Romangie Theme</a>.'), date('Y'), 'http://www.wordpress.org/', 'http://themes.tobscore.com/romangie/'); ?></p>
+		<p><?php printf( __( 'Copyright &copy; 2013-%1$s. Powered by <a href="%2$s">WordPress</a> &amp; <a href="%3$s">Romangie Theme</a>.'), date('Y'), 'http://www.wordpress.org/', 'http://themes.tobscore.com/romangie/'); ?></p>
 		</div>
 	</div>
 </div> <!-- /footer -->
