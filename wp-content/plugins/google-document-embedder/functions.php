@@ -17,14 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; }
 @define( 'GDE_PLUGIN_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 @define( 'GDE_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
-// external urls (help, beta API, etc.)
+// help links
 @define( 'GDE_STDOPT_URL', 'http://www.davistribe.org/gde/settings/viewer-options/' );
 @define( 'GDE_ENHOPT_URL', 'http://www.davistribe.org/gde/settings/enhanced-options/' );
 @define( 'GDE_PROOPT_URL', 'http://www.davistribe.org/gde/settings/viewer-profiles/' );
 @define( 'GDE_ADVOPT_URL', 'http://www.davistribe.org/gde/settings/advanced-options/' );
 @define( 'GDE_FORUM_URL', 'http://wordpress.org/support/plugin/google-document-embedder' );
 @define( 'GDE_WP_URL', 'http://wordpress.org/extend/plugins/google-document-embedder/' );
-@define( 'GDE_BETA_API', 'http://dev.davismetro.com/api/1.0/' );
 
 /**
  * List supported extensions & MIME types
@@ -104,6 +103,7 @@ function gde_validate_file( $file = NULL, $force ) {
 	$nofile = __('File not specified, check shortcode syntax', 'gde');
 	$badlink = __('Requested URL is invalid', 'gde');
 	$badtype = __('Unsupported File Type', 'gde') . " (%e)";
+	$unktype = __('Unable to determine file type from URL', 'gde');
 	$notfound = __('Error retrieving file - if necessary turn off error checking', 'gde') . " (%e)";
 	
 	if ( ! $file ) {
@@ -139,6 +139,10 @@ function gde_validate_file( $file = NULL, $force ) {
 				$fn = basename( $file );
 				$fnp = gde_split_filename( $fn );
 				$type = $fnp[1];
+				
+				if ( $type == '' ) {
+					return $unktype;
+				}
 				$badtype = str_replace( "%e", $type, $badtype );
 				
 				return $badtype;
@@ -279,6 +283,8 @@ function gde_sanitize_dims( $dim ) {
  * @return  string Short url response from API call, or false on error
  */
 function gde_get_short_url( $u ) {
+	return $u; //bypass this function - breaks in current viewer
+	
 	$u = urlencode( $u );
 	$service[] = "http://tinyurl.com/api-create.php?url=" . $u;
 	$service[] = "http://is.gd/create.php?format=simple&url=" . $u;
@@ -315,6 +321,8 @@ function gde_get_short_url( $u ) {
  * @return  string Secure URL, or false on error
  */
 function gde_get_secure_url( $u ) {
+	return $u; //bypass this function - breaks in current viewer
+	
 	require_once( GDE_PLUGIN_DIR . 'libs/lib-secure.php' );
 
 	if ( ! $url = gde_make_secure_url( $u ) ) {

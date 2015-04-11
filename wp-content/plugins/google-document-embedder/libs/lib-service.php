@@ -13,9 +13,6 @@ if ( ! function_exists('gde_activate') ) {
 }
 
 if ( isset( $_REQUEST['json'] ) ) {
-	// exclude API key from export to file (can't be imported)
-	unset( $gdeoptions['api_key'] );
-	
 	switch ( $_REQUEST['json'] ) {
 		case "profiles":
 			if ( isset( $_REQUEST['id'] ) ) {
@@ -65,16 +62,16 @@ if ( isset( $_REQUEST['json'] ) ) {
 	$blogid = get_current_blog_id();
 	
 	$table = $wpdb->base_prefix . 'gde_dx_log';
-	$data = $wpdb->get_col( "SELECT * FROM $table WHERE blogid = '$blogid' ORDER BY id ASC", 2 );
-	
-	header('Content-type: text/plain');
-	
-	if ( is_array( $data ) ) {
-		foreach ( $data as $v ) {
-			echo $v . "\n";
+	$check = $wpdb->query("SHOW TABLES LIKE '" . $table . "'");
+	//if ( mysql_num_rows( $check ) > 0 ) {
+	if ( $check ) {
+		$data = $wpdb->get_col( "SELECT * FROM $table WHERE blogid = '$blogid' ORDER BY id ASC", 2 );
+		header('Content-type: text/plain');
+		if ( is_array( $data ) ) {
+			foreach ( $data as $v ) {
+				echo $v . "\n";
+			}
 		}
-	} else {
-		wp_die('<p>'.__('You do not have sufficient permissions to access this page.').'</p>');
 	}
 } else {
 	wp_die('<p>'.__('You do not have sufficient permissions to access this page.').'</p>');

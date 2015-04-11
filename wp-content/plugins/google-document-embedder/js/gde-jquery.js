@@ -61,8 +61,6 @@ jQuery(function ($) {
 	updateHelp('linkshow-h', title);
 	var title = $('#tb_mobile').children(":selected").attr("title");
 	updateHelp('mobile-h', title);
-	colorSelected('gdev_t', 'vw_bgcolor');
-	colorSelected('gdev_b', 'vw_pbcolor');
 	
 	// adv tab
 	var title = $('#beta_check').children(":selected").attr("title");
@@ -102,18 +100,16 @@ jQuery(function ($) {
 		toggleLink(lset);
 		allowSecure();
 	});
-	$('#gdev_t').change(function() {
-		colorSelected('gdev_t', 'vw_bgcolor');
+	$('#block').click(function() {
+		if (($('#block').is(':checked')) && ($('#gdet_h').is(':checked'))) {
+			$('#gdet_n').attr('checked', false); 
+		}
 	});
-	$('#gdev_b').change(function() {
-		colorSelected('gdev_b', 'vw_pbcolor');
-	});
-	$('#vw_bgcolor').change(function() {
-		$('#vw_bgcolor_holder').val($('#vw_bgcolor').val());
-	});
-	$('#vw_pbcolor').change(function() {
-		$('#vw_pbcolor_holder').val($('#vw_pbcolor').val());
-	});
+	
+	$('#vw_bgcolor').attr('data-default-color', '#EBEBEB');
+	$('#vw_pbcolor').attr('data-default-color', '#DADADA');
+	var colorPickerOptions = { palettes: false };
+	$('.gde-color-field').wpColorPicker(colorPickerOptions).removeAttr('disabled');
 	
 	// adv tab
 	$('#ed_disable').change(function() {
@@ -161,7 +157,9 @@ jQuery(function ($) {
 	function allowSecure() {
 		var isSecurable = false;
 		if ($('#link_show').val() == "none") {
-			if ($('#gdet_n').is(':checked') && $('#tb_fullscr').val() !== "default") {
+			if ($('#gdet_h').is(':checked')) {
+				isSecurable = true;
+			} else if (! $('#gdet_h').is(':checked') && $('#tb_fullscr').val() !== "default") {
 				isSecurable = true;
 			} else if (! $('#gdet_n').is(':checked')) {
 				isSecurable = true;
@@ -171,17 +169,7 @@ jQuery(function ($) {
 			$('#linkblock').show();
 		} else {
 			$('#linkblock').hide();
-		}
-	}
-	
-	function colorSelected(source, target) {
-		if ($('#' + source).is(':checked')) {
-			$('#' + target).attr('disabled', 'disabled').hide();
-			$('#' + target + "_holder").show();
-		} else {
-			$('#' + target).removeAttr('disabled');
-			$('#' + target + "_holder").hide();
-			$('#' + target).show();
+			$('#block').attr('checked', false); 
 		}
 	}
 	
@@ -360,7 +348,6 @@ jQuery(function ($) {
 		}
 	});
 	
-	
 	// validate input
 	$("#debugsend").click(function(e) {
 		$(".err").hide();
@@ -374,7 +361,9 @@ jQuery(function ($) {
 		
 		e.preventDefault();
 		
-		if ($('#sc').val() == "" && $('#msg').val() == "") {
+		if ($('#sc').val() !== "" && $('#msg').val() == "") {
+			alert( jqs_vars.baddebug );
+		} else if ($('#msg').val() == "") {
 			alert( jqs_vars.baddebug );
 		} else {
 			$("#debugsend").attr("disabled","true");

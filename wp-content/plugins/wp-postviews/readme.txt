@@ -2,39 +2,50 @@
 Contributors: GamerZ  
 Donate link: http://lesterchan.net/site/donation/  
 Tags: views, hits, counter, postviews  
-Requires at least: 2.8  
-Tested up to: 3.5  
-Stable tag: trunk  
+Requires at least: 3.0  
+Tested up to: 4.1  
+Stable tag: 1.69  
 
 Enables you to display how many times a post/page had been viewed.
 
 == Description ==
 
-= Previous Versions =
-* [WP-PostViews 1.40 For WordPress 2.7.x](http://downloads.wordpress.org/plugin/wp-postviews.1.40.zip "WP-PostViews 1.40 For WordPress 2.7.x")
-* [WP-PostViews 1.31 For WordPress 2.3.x, 2.5.x And 2.6.x](http://downloads.wordpress.org/plugin/wp-postviews.1.31.zip "WP-PostViews 1.31 For WordPress 2.3.x, 2.5.x And 2.6.x")
-* [WP-PostViews 1.11 For WordPress 2.1.x And 2.2.x](http://downloads.wordpress.org/plugin/wp-postviews.1.11.zip "WP-PostViews 1.11 For WordPress 2.1.x And 2.2.x")
-* [WP-PostViews 1.02 For WordPress 2.0.x](http://downloads.wordpress.org/plugin/wp-postviews.1.02.zip "WP-PostViews 1.02 For WordPress 2.0.x")
+= Build Status =
+[![Build Status](https://travis-ci.org/lesterchan/wp-postviews.svg?branch=master)](https://travis-ci.org/lesterchan/wp-postviews)
 
 = Development =
-* [http://dev.wp-plugins.org/browser/wp-postviews/](http://dev.wp-plugins.org/browser/wp-postviews/ "http://dev.wp-plugins.org/browser/wp-postviews/")
+[https://github.com/lesterchan/wp-postviews/](https://github.com/lesterchan/wp-postviews/ "https://github.com/lesterchan/wp-postviews/")
 
 = Translations =
-* [http://dev.wp-plugins.org/browser/wp-postviews/i18n/](http://dev.wp-plugins.org/browser/wp-postviews/i18n/ "http://dev.wp-plugins.org/browser/wp-postviews/i18n/")
-
-= Support Forums =
-* [http://forums.lesterchan.net/index.php?board=16.0](http://forums.lesterchan.net/index.php?board=16.0 "http://forums.lesterchan.net/index.php?board=16.0")
+[http://dev.wp-plugins.org/browser/wp-postviews/i18n/](http://dev.wp-plugins.org/browser/wp-postviews/i18n/ "http://dev.wp-plugins.org/browser/wp-postviews/i18n/")
 
 = Credits =
-* WP-Cache/WP-SuperCache Compatibility By [Thaya Kareeson](http://omninoggin.com/ "Thaya Kareeson")
-* __ngetext() by [Anna Ozeritskaya](http://hweia.ru/ "Anna Ozeritskaya")
-* Right To Left Language Support by [Kambiz R. Khojasteh](http://persian-programming.com/ "Kambiz R. Khojasteh")
-* Options To Display Views On Certain Places by [David Potter](http://dpotter.net/Technical/ "David Potter")
+* Plugin icon by [Iconmoon](http://www.icomoon.io) from [Flaticon](http://www.flaticon.com)
 
 = Donations =
-* I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
+I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
 
 == Changelog ==
+= Version 1.69 =
+* NEW: Shortcode `[views]` or [views id="POST_ID"]` to embed view count into post
+* NEW: Added template variable `%VIEW_COUNT_ROUNDED%` to support rounded view count like 10.1k or 11.2M
+
+= Version 1.68 =
+* NEW: Added action hook 'postviews_increment_views' and 'postviews_increment_views_ajax'
+* NEW: Allow custom post type to be chosen under the widget
+
+= Version 1.67 =
+* NEW: Allow user to not use AJAX to update the views even though WP_CACHE is true
+
+= Version 1.66 =
+* NEW: Supports MultiSite Network Activation
+* NEW: Add %POST_DATE% and %POST_TIME% to template variables
+* NEW: Add China isearch engines bots
+* NEW: Ability to pass in an array of post types for get_most/least_*() functions. Props Leo Plaw.
+* FIXED: Moved uninstall to uninstall.php and hence fix missing nonce. Props Julio Potier.
+* FIXED: Notices and better way to get views from meta. Props daankortenbach.
+* FIXED: No longer needing add_post_meta() if update_post_meta() fails.
+
 = Version 1.65 (02-06-2013) =
 * FIXED: Views not showing in WP-Admin if "Display Options" is not set to "Display to everyone"
 
@@ -131,6 +142,7 @@ Enables you to display how many times a post/page had been viewed.
 2. You may place it in archive.php, single.php, post.php or page.php also.
 3. Find: `<?php while (have_posts()) : the_post(); ?>`
 4. Add Anywhere Below It (The Place You Want The Views To Show): `<?php if(function_exists('the_views')) { the_views(); } ?>`
+5. Or you can use the shortcode `[views]` or `[views id="1"]` (where 1 is the post ID) in a post
 
 == Upgrading ==
 
@@ -146,6 +158,7 @@ N/A
 == Screenshots ==
 
 1. PostViews
+2. Admin - PostViews Options
 
 == Frequently Asked Questions ==
 
@@ -164,7 +177,7 @@ N/A
 	</ul>
 <?php endif; ?>
 </code>
-* The first value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The first value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The second value you pass in is the maximum number of post you want to get.
 * Default: get_least_viewed('both', 10);
 
@@ -177,7 +190,7 @@ N/A
 	</ul>
 <?php endif; ?>
 </code>
-* The first value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The first value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The second value you pass in is the maximum number of post you want to get.
 * Default: get_most_viewed('both', 10);
 
@@ -191,7 +204,7 @@ N/A
 <?php endif; ?>
 </code>
 * The first value you pass in is the tag id.
-* The second value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The second value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The third value you pass in is the maximum number of post you want to get.
 * Default: get_least_viewed_tag(1, 'both', 10);
 
@@ -205,7 +218,7 @@ N/A
 <?php endif; ?>
 </code>
 * The first value you pass in is the tag id.
-* The second value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The second value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The third value you pass in is the maximum number of post you want to get.
 * Default: get_most_viewed_tag(1, 'both', 10);
 
@@ -219,7 +232,7 @@ N/A
 <?php endif; ?>
 </code>
 * The first value you pass in is the category id.
-* The second value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The second value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The third value you pass in is the maximum number of post you want to get.
 * Default: get_least_viewed_category(1, 'both', 10);
 
@@ -233,11 +246,11 @@ N/A
 <?php endif; ?>
 </code>
 * The first value you pass in is the category id.
-* The second value you pass in is what you want to get, 'post', 'page' or 'both'.
+* The second value you pass in is the post type that you want. If you want to get every post types, just use 'both'. It also supports PHP array: example `array('post', 'page')`.
 * The third value you pass in is the maximum number of post you want to get.
 * Default: get_most_viewed_category(1, 'both', 10);
 
 = To Sort Most/Least Viewed Posts =
-* You can use: `<?php query_posts('v_sortby=views&amp;v_orderby=desc') ?>`
-* Or pass in the variables to the URL: `http://yoursite.com/?v_sortby=views&amp;v_orderby=desc`
-* You can replace desc with asc if you want the least viewed posts.
+* You can use: `<?php query_posts( array( 'meta_key' => 'views', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) ); ?>`
+* Or pass in the variables to the URL: `http://yoursite.com/?v_sortby=views&v_orderby=desc`
+* You can replace DESC  with ASC if you want the least viewed posts.

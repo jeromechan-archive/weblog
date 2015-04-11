@@ -3,12 +3,12 @@
 /*
 Plugin Name: Google Doc Embedder
 Plugin URI: http://www.davistribe.org/gde/
-Description: Lets you embed MS Office, PDF, TIFF, and many other file types in a web page using the Google Docs Viewer (no Flash or PDF browser plug-ins required).
+Description: Lets you embed PDF, MS Office, TIFF, and many other file types in a web page using the Google Docs Viewer (no Flash or PDF browser plug-ins required).
 Author: Kevin Davis
 Author URI: http://www.davistribe.org/
 Text Domain: gde
 Domain Path: /languages/
-Version: 2.5.7
+Version: 2.5.19
 License: GPLv2
 */
 
@@ -32,13 +32,13 @@ License: GPLv2
  *
  * @package    google-document-embedder
  * @author     Kevin Davis <wpp@tnw.org>
- * @copyright  Copyright 2012 Kevin Davis
+ * @copyright  Copyright 2014 Kevin Davis
  * @license    http://www.gnu.org/licenses/gpl.txt GPL 2.0
  * @link       http://www.davistribe.org/gde/
  */
 
 // boring init junk
-$gde_ver 				= "2.5.7.98";
+$gde_ver 				= "2.5.19";
 $gde_db_ver 			= "1.2";		// update also in gde_activate()
 
 require_once( plugin_dir_path( __FILE__ ) . 'functions.php' );
@@ -94,13 +94,9 @@ function gde_do_shortcode( $atts ) {
 		'save' => '',
 		'width' => '',
 		'height' => '',
-		'cache' => '',
-		'title' => '', // not yet implemented
-		'page' => '',
-		
-		// backwards compatibility < gde 2.5 (still work but now "deprecated" and discouraged in the documentation)
-		'authonly' => '',
-		'lang' => ''
+		'cache' => ''
+		//'title' => '', // not yet implemented
+		//'page' => '',	// support broken in Google Viewer
 	), $atts ) );
 	
 	// get requested profile data (or default if doesn't exist)
@@ -110,7 +106,7 @@ function gde_do_shortcode( $atts ) {
 		if ( ! $profile = gde_get_profiles( $term ) ) {
 			gde_dx_log("Loading default profile instead");
 			if ( ! $profile = gde_get_profiles( 1 ) ) {
-				$code = gde_show_error( __('Unable to load requested profile.', 'gde') );
+				return gde_show_error( __('Unable to load requested profile.', 'gde') );
 			} else {
 				$pid = 1;
 			}
@@ -122,7 +118,7 @@ function gde_do_shortcode( $atts ) {
 		if ( ! $profile = gde_get_profiles( strtolower( $term ) ) ) {
 			gde_dx_log("Loading default profile instead");
 			if ( ! $profile = gde_get_profiles( 1 ) ) {
-				$code = gde_show_error( __('Unable to load requested profile.', 'gde') );
+				return gde_show_error( __('Unable to load requested profile.', 'gde') );
 			} else {
 				$pid = 1;
 			}
@@ -148,11 +144,9 @@ function gde_do_shortcode( $atts ) {
 			$cache = $profile['cache'];
 		}
 	}
-	if ( empty( $lang ) ) {
-		if ( $profile['language'] !== "en_US" ) {
-			$lang =  $profile['language'];
-		}
-	}
+	//if ( $profile['language'] !== "en_US" ) {
+		$lang =  $profile['language'];
+	//}
 	
 	// tweak the dimensions if necessary
 	$width = gde_sanitize_dims( $width );
@@ -180,6 +174,11 @@ function gde_do_shortcode( $atts ) {
 	// capture file details
 	$fn = basename( $file );
 	$fnp = gde_split_filename( $fn );
+	
+	// check for missing required field
+	if ( ! $file ) {
+		return gde_show_error( __('File not specified, check shortcode syntax', 'gde') );
+	}
 	
 	// file validation
 	if ( $gdeoptions['error_check'] == "no" ) {
@@ -239,18 +238,20 @@ function gde_do_shortcode( $atts ) {
 		} else {
 		
 			// which viewer?
-			if ( $profile['viewer'] == "enhanced" ) {
-				$lnk = GDE_PLUGIN_URL . "view.php?url=" . urlencode( $links[0] ) . "&hl=" . $lang . "&gpid=" . $pid;
-			} else {
-				$lnk = "http://docs.google.com/viewer?url=" . urlencode( $links[0]  ) . "&hl=" . $lang;
-			}
+			//if ( $profile['viewer'] == "enhanced" ) {
+			//	$lnk = GDE_PLUGIN_URL . "view.php?url=" . urlencode( $links[0] ) . "&hl=" . $lang . "&gpid=" . $pid;
+				// make protocol-agnostic
+			//	$lnk = preg_replace( '/^https?:/i', '', $lnk );
+			//} else {
+				$lnk = "//docs.google.com/viewer?url=" . urlencode( $links[0]  ) . "&hl=" . $lang;
+			//}
 			
 			// what mode?
-			if ( $profile['tb_mobile'] == "always" ) {
-				$lnk .= "&mobile=true";
-			} else {
+			//if ( $profile['tb_mobile'] == "always" ) {
+			//	$lnk .= "&mobile=true";
+			//} else {
 				$lnk .= "&embedded=true";
-			}
+			//}
 			
 			// build viewer
 			if ( $viewer == false ) {
@@ -264,10 +265,10 @@ function gde_do_shortcode( $atts ) {
 				
 				// frame attributes
 				$vattr[] = ' scrolling="no"';						// iphone scrolling bug
-				if ( ! empty( $page ) && is_numeric( $page ) ) {	// selected starting page
-					$page = (int) $page - 1;
-					$vattr[] = ' onload="javascript:this.contentWindow.location.hash=\':0.page.' . $page . '\';"';
-				}
+				//if ( ! empty( $page ) && is_numeric( $page ) ) {	// selected starting page
+				//	$page = (int) $page - 1;
+				//	$vattr[] = ' onload="javascript:this.contentWindow.location.hash=\':0.page.' . $page . '\';"';
+				//}
 				$vwr = str_replace( "%ATTRS%", implode( '', $vattr ), $vwr );
 			}
 			
@@ -276,7 +277,7 @@ function gde_do_shortcode( $atts ) {
 			if ( ! empty( $links[1] ) ) {	// link empty = secure document; ignore any other save attribute
 				if ( $save == "all" || $save == "1" ) {
 					$allow_save = true;
-				} elseif ( ( $save == "users" || $authonly == "1" ) && is_user_logged_in() ) {
+				} elseif ( $save == "users" && is_user_logged_in() ) {
 					$allow_save = true;
 				}
 			}
@@ -303,8 +304,8 @@ function gde_do_shortcode( $atts ) {
 				if ( empty( $profile['link_text'] ) ) {
 					$profile['link_text'] = __('Download', 'gde');
 				}
-				$dltext = str_replace( "%TITLE", $title, $profile['link_text'] );
-				$dltext = str_replace( "%FILE", $fn, $dltext );
+				
+				$dltext = str_replace( "%FILE", $fn, $profile['link_text'] );
 				$dltext = str_replace( "%TYPE", $ftype, $dltext );
 				$dltext = str_replace( "%SIZE", gde_format_bytes( $status['fsize'] ), $dltext );
 				
@@ -329,14 +330,8 @@ if ( is_admin() ) {
 	// add quick settings link to plugin list
 	add_filter( "plugin_action_links_" . plugin_basename( __FILE__ ), 'gde_actlinks' );
 	
-	// beta notification (if enabled)
-	if ( gde_check_for_beta( __FILE__ ) ) {
-		// override plugin update text
-		add_action( 'admin_enqueue_scripts', 'gde_admin_beta_js_update' );
-	} else {
-		// no update available, but notify if currently using a beta
-		add_action( 'after_plugin_row', 'gde_warn_on_plugin_page' );
-	}
+	// notify if currently using a beta
+	add_action( 'after_plugin_row', 'gde_warn_on_plugin_page' );
 	
 	// editor integration
 	if ( ! isset( $gdeoptions['ed_disable'] ) || $gdeoptions['ed_disable'] == "no" ) {
@@ -351,14 +346,8 @@ if ( is_admin() ) {
 			add_filter( 'upload_mimes', 'gde_upload_mimes' );
 		}
 		
-		if ( version_compare( $wp_version, "3.5", "<" ) ) {
-			// embed shortcode instead of link from media library for supported types
-			add_filter( 'attachment_fields_to_edit', 'gde_attachment_fields_to_edit', null, 2 );
-			add_filter( 'media_send_to_editor', 'gde_media_insert', 20, 3 );
-		} else {
-			//add_filter( 'attachment_fields_to_edit', 'gde_attachment_fields_to_edit_35', null, 2 );
-			add_filter( 'media_send_to_editor', 'gde_media_insert_35', 20, 3 );
-		}
+		// embed shortcode instead of link from media library for supported types
+		add_filter( 'media_send_to_editor', 'gde_media_insert', 20, 3 );
 	}
 	
 	// add local settings page

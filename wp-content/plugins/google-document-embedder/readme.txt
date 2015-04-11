@@ -1,18 +1,35 @@
 === Google Doc Embedder ===
-Contributors: k3davis
-Tags: doc, docx, pdf, ppt, pptx, xls, psd, zip, rar, tiff, ttf, office, powerpoint, google
+Contributors: danlester, k3davis
+Tags: doc, docx, pdf, ppt, pptx, xls, office, powerpoint, google, document, embed
 Author URI: http://www.davistribe.org/code/
 Donate link: http://www.davistribe.org/gde/donate/
-Requires at least: 3.2
-Tested up to: 3.6
+Requires at least: 3.5
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 
-Lets you embed MS Office, PDF, and many other file types in a web page using the Google Docs Viewer (no Flash or PDF browser plug-ins required).
+Lets you embed PDF, MS Office, and many other file types in a web page using the free Google Docs Viewer (no Flash or PDF browser plug-ins required).
 
 == Description ==
 
-Google Doc Embedder lets you embed several types of files into your WordPress pages using the Google Docs Viewer - allowing inline viewing (and optional downloading) of the following file types, with no Flash or PDF browser plug-ins required:
+Google Doc Embedder lets you embed several types of files into your WordPress pages using the free Google Docs Viewer - allowing inline viewing (and optional downloading) of a wide range of popular file types, with no Flash or PDF browser plug-ins required.
+
+> <strong>NOTE: Recent changes by Google to their viewer mean that some other plugins may be more suitable in some cases:</strong><br>
+> 
+> * If you are able to store your files in Google Drive, try the [Google Drive Embedder plugin](http://wp-glogin.com/wpgoogledoctodrive). This will be faster to display, and more reliable.
+> * If you are looking for the ability to make it difficult to download the full PDF (the old 'enhanced mode'), please find out more about [our new plugin - PDF Embedder Secure](http://wp-pdf.com/secure/?utm_source=GDE%20Readme&utm_medium=wordpressorg&utm_campaign=Freemium).
+> * If this plugin works as you require then we will continue to support it assuming Google still provides the underlying Doc Viewer in its current form!
+> 
+> This plugin only works in "Standard Viewer" mode for the time being since the recent changes to Google Doc Viewer were incompatible with the "Enhanced Viewer" mode.
+
+= More about Google Doc Embedder =
+
+Similar to services like Scribd, Google Doc Embedder will allow you to embed these files directly into your page or post, not requiring
+the user to have Microsoft Word, Adobe Reader, PowerPoint, or other software installed to view the contents. Unlike Scribd, the files do
+not need to be uploaded to any service first - including Google Docs - but can exist anywhere publicly accessible on your site or the
+internet.
+
+Supported file formats include:
 
 * Adobe Acrobat (PDF)
 * Microsoft Word (DOC/DOCX*)
@@ -29,11 +46,6 @@ Google Doc Embedder lets you embed several types of files into your WordPress pa
 * XML Paper Specification (XPS)
 * Archive Files (ZIP/RAR)
 
-Similar to services like Scribd, Google Doc Embedder will allow you to embed these files directly into your page or post, not requiring
-the user to have Microsoft Word, Adobe Reader, PowerPoint, or other software installed to view the contents. Unlike Scribd, the files do
-not need to be uploaded to any service first - including Google Docs - but can exist anywhere publicly accessible on your site or the
-internet.
-
 Office XML (2007+) file formats are sometimes problematic with Google Viewer. Please test your documents, and when possible I recommend
 you use the Office 2003 equivalent formats instead.
 
@@ -43,9 +55,10 @@ Translations are welcome; see the [web site](http://www.davistribe.org/gde/notes
 
 * English (en\_US), built-in
 * Czech (cs\_CZ) by Jirka, thanks!
-* Dutch (nl\_NL) by Robert van den Breemen, thanks!
+* Dutch (nl\_NL) by Niko Strijbol, thanks!
 * French (fr\_FR) by [Erwan](http://profiles.wordpress.org/erwanlescop "Erwan"), thanks!
 * Hungarian (hu\_HU) by [szemcse](http://profiles.wordpress.org/szemcse "szemcse"), thanks!
+* Italian (it\_IT) by [Marco](https://plus.google.com/+MarcoMardegan "Marco"), thanks!
 * Russian (ru\_RU) by J&#243;zek, thanks!
 * Spanish (es\_ES) by [elarequi](http://elarequi.com/propuestastic/ "elarequi"), thanks!
 * Turkish (tr\_TR) by [LettoBlog](http://profiles.wordpress.org/lettoblog "LettoBlog"), thanks!
@@ -68,13 +81,14 @@ Go to "GDE Settings" (under "Settings" in the admin panel) to change defaults, o
 
 = Where can the files live? =
 The file to embed must first be publicly available somewhere on the internet, in order for Google to retrieve the document for conversion.
-You can upload it to your WordPress site using the standard techniques, or link to a file on another site.
+You can upload it to your WordPress site using the standard techniques, or link to a file on another site. For testing purposes, your site can run locally or on private networks, but the documents you wish to embed must be publicly accessible.
 
 = How do I embed a file in my page or post? =
 There are several ways you can insert a supported document, depending on your preference:
 
 * Manually enter the shortcode (explained below).
-* Upload a supported file type from a page or post, and from the Media Library, click the "Insert" button.
+* Click the "Add Media" button to upload or select a file from your media library, and ensure the "Link To" setting in Attachment Display Settings
+is set to "Media File." Then click "Insert into post."
 * Use the Google Doc Embedder button in the Visual editor to insert the `[gview]` shortcode.
 * Paste the URL into the HTML editor, select it, and click the "GDE" quicktag button (HTML/Text editor).
 
@@ -93,7 +107,6 @@ Common optional attributes:
 * `profile=` : Enter the number or name of the desired profile for the viewer to use (default profile is used if not specified)
 * `width=` : To override the profile's default width of the viewer, enter a new width value - e.g., "400px" or "80%"
 * `height=` : To override the profile's default height of the viewer, enter a new height value - e.g., "400px" or "80%"
-* `page=` : Set to the number of the page you want the document to open up to (if not page 1)
 
 For a list of all available attributes, see [Usage](http://www.davistribe.org/gde/usage/ "Usage").
 
@@ -118,9 +131,8 @@ documents stored there and shared publicly do not embed reliably with their stan
 supported by the plug-in. Please store your original documents somewhere on your web site in their native supported formats.
 
 = Does it work in Multisite environments? =
-Yes, though the plugin does not support network activation at this time. For now, please activate individually on muultisite installs.
-I will work to improve this in a coming version. Otherwise, more granular multisite options are planned for future versions based on demand.
-If you use GDE in a multisite environment, I welcome your feedback on what functionality you would like to see.
+The plugin works on network installs, though it must be activated on a per-site basis (not network activated). There are no multisite
+specific features at this time, but it will function normally in this environment. If you use GDE in a multisite environment, I welcome your feedback on what functionality you would like to see.
 
 = Other Common Questions =
 More common questions are answered on the GDE web site [here](http://www.davistribe.org/gde/notes/ "Notes").
@@ -137,8 +149,60 @@ More common questions are answered on the GDE web site [here](http://www.davistr
 
 (E) Enhanced Viewer
 
+= 2.5.19 =
+* Fixed potential XSS attack flaw - please update to this version.
+
+= 2.5.18 =
+* Added: Notice on settings page about recent changes to Google Viewer.
+
+= 2.5.17 =
+* Fixed: Potential security vulnerability in disabled enhanced viewer code
+
+= 2.5.16 =
+* Removed: Masked URL ability, pending rewrite after Google breakage
+
+= 2.5.15 =
+* Removed: Enhanced Viewer and mobile option, pending rewrite after Google breakage
+* Added: Italian translation (thanks Marco)
+* Fixed: Potential block download and hidden toolbar conflict (thanks Tom)
+* Fixed: Garbled Cyrillic text in editor dialog (thanks bones852)
+
+= 2.5.14 =
+* Fixed: Download link had no text in some circumstances
+* Updated: Hungarian translation (thanks szemcse)
+
+= 2.5.13 =
+* Fixed: Javascript error within WP 3.9 visual editor (thanks Sergey)
+* Fixed: (E) Unsupported browser message on some documents
+* Changed: (E) Lengthened default network timeout
+* Removed: Long-useless authonly= and lang= shortcode parameters (use profiles)
+
+= 2.5.12 =
+* Changed: Updated mobile detection library
+* Changed: Updated settings navigation style for WP 3.8+
+* Changed: Updated Dutch translation (thanks Niko)
+
+= 2.5.11 =
+* Fixed: Settings and profiles import
+* Changed: Removed more unreachable legacy code
+
+= 2.5.10 =
+* Fixed: PHP warning on multisite during uninstall (thanks TigranTovmasyan)
+* Changed: (E) Viewer settings use native color picker
+* Changed: Now requires WordPress 3.5+ (removed legacy functions)
+
+= 2.5.9 =
+* Fixed: Mixed content restrictions while parent page is SSL
+* Removed: page= shortcode attribute (broken in Google Viewer)
+* Removed: Beta delivery api (server bandwidth issues/WP repo policies)
+
+= 2.5.8 =
+* Added: (E) Right-click menu disabled on secure documents
+* Fixed: Support tab service errors
+* Changed: Czech translation updated (thanks Jirka)
+
 = 2.5.7 =
-* Fixed: No submit button on support tab in using < WP 3.4 (thanks fatherb)
+* Fixed: No submit button on support tab if using < WP 3.4 (thanks fatherb)
 * Fixed: save=0 option not respected in some cases
 * Fixed: (E) cache=0 option breaks secure document display (thanks Manish)
 * Fixed: (E) Javascript sometimes broken with WP_DEBUG enabled
@@ -184,72 +248,7 @@ More common questions are answered on the GDE web site [here](http://www.davistr
 * Fixed: Viewer size from shortcode doesn't default to pixel
 * Fixed: Erroneous error message when file validation is blocked
 
-= 2.5 =
-* Added: "Profiles" allow each viewer instance to have its own settings
-* Added: (E) Private document support (block downloads of source file)
-* Added: (E) Customize viewer color scheme
-* Added: (E) Full toolbar customization, including removal
-* Added: Backup/Import of settings and viewer profiles
-* Added: page= shortcode attribute to start viewer on designated page
-* Added: Beta delivery API for automatic updates of pre-release versions
-* Added: Media Library and editor integration improvements
-* Added: Support for dynamic protocol document links (thanks Clifford)
-* Added: French translation (thanks Erwan)
-* Added: Ukrainian translation (thanks J&#243;zek)
-* Fixed: Uses WordPress HTTP API instead of cURL etc. throughout
-* Fixed: (E) Hidden toolbar buttons still narrowly clickable (thanks rohan)
-* Fixed: Editor dialog and default base URL with non-standard include
-* Fixed: File validation fails if content-length missing (thanks paulod)
-* Fixed: Invalid HTML in support form
-* Changed: Completely rewritten core and administrative interface
-* Changed: (E) Improved default viewer toolbar style
-* Changed: Now requires WordPress 3.2+ (due to necessary PHP5 functions)
-* Changed: Errors now show inline instead of as HTML comments by default
-* Removed: force= shortcode attribute (redundant and confusing)
-
-= 2.4.6 =
-* Fixed: Error in Mask URL download link for non-PDF file types
-
-= 2.4.5 =
-* Fixed: Regression breaks some files containing spaces (thanks mlautens)
-* Fixed: Mask URL 400 error on filenames with spaces (thanks mrhaanraadts)
-* Fixed: PDF Force Download option doesn't support SSL
-
-= 2.4.4 =
-* Added: PPS and OTF support
-* Fixed: Broken support of international filenames in IE (thanks beredim)
-* Fixed: More robust file size checking with nonstandard filenames
-* Fixed: Global disable cache option not always honored
-* Fixed: (E) Mobile theme not loaded if not globally requested
-* Changed: Now requires WordPress 3.0+ (mainly for support reasons)
-
-= 2.4.3 =
-* Added: (E) Dark theme shortcode option (EXPERIMENTAL)
-* Added: Turkish translation (thanks LettoBlog)
-* Fixed: Visual editor integration for IIS webhosts (thanks Kristof)
-* Changed: Debug information is now a support page from plugin list
-
-= 2.4.2 =
-* Fixed: PHP Warning related to MIME type expansion (thanks Adebayo)
-
-= 2.4.1 =
-* Added: Spanish translation (thanks elarequi)
-* Added: Method to obtain debug information
-* Fixed: Insertion of non-GDE file types from Media Library
-
-= 2.4 =
-* Added: Allow native upload/insert of all supported file types
-* Added: Shortcode inserted from Media Library for supported files
-* Added: Localization support (translations welcome)
-* Added: (E) Ability to use mobile theme
-* Fixed: (E) Toolbar customization on mobile
-* Fixed: Editor integration no longer loads its own TinyMCE/jquery libs
-* Fixed: URL changes for plugin, help links, beta checking
-* Fixed: (E) "Moved Temporarily" error (thanks webmonkeywatts)
-
 [Full history...](http://www.davistribe.org/gde/changelog/ "Full history")
 
 == Upgrade Notice ==
 
-= 2.5.7 =
-Maintenance release

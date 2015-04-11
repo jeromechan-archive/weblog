@@ -1,5 +1,10 @@
 <?php
 
+if ( ! function_exists('gde_activate') ) {
+	// no access if parent plugin is disabled or when accessed directly
+	wp_die('<p>'.__('You do not have sufficient permissions to access this page.').'</p>');
+}
+
 /**
  * Define system defaults (settings/profiles)
  *
@@ -14,22 +19,20 @@ function gde_defaults( $type ) {
 		$pdata = gde_get_plugin_data();
 		$baseurl = gde_base_url();
 		$default_lang = gde_get_locale();
-		$apikey = gde_get_api_key( $pdata['Version'] );
+		$apikey = '';
 		$env = array(
 			'pdata'				=>	$pdata,
 			'baseurl'			=>	$baseurl,
-			'default_lang'		=>	$default_lang,
-			'apikey'			=>	$apikey
+			'default_lang'		=>	$default_lang
 		);
 	}
 	
 	// define "global" options (multisite only)
 	$globalopts = array(
 		'file_maxsize'			=>	'12',
-		'beta_check'			=>	'yes',
-		'api_key'				=>	$env['apikey']
+		'beta_check'			=>	'no'
 	);
-
+	
 	// define default options
 	$defopts = array(
 		'ed_disable'			=>	'no',
@@ -39,11 +42,10 @@ function gde_defaults( $type ) {
 		'error_check'			=>	'yes',
 		'error_display'			=>	'yes',
 		'error_log'				=>	'no',
-		'beta_check'			=>	'yes',
+		'beta_check'			=>	'no',
 		'ga_enable'				=>	'no',
 		'ga_category'			=>	$env['pdata']['Name'],
-		'ga_label'				=>	'url',
-		'api_key'				=>	$env['apikey']
+		'ga_label'				=>	'url'
 	);
 	
 	// define default profile(s)
@@ -274,82 +276,10 @@ function gde_get_options() {
 				gde_dx_log('Options were updated');
 				update_option('gde_options', $defopts);
 			}
-			
-			// set API key if empty (ie., failed on earlier attempt or first upgrade)
-			if ( empty( $gdeoptions['api_key'] ) && ! empty( $apikey ) ) {
-				$gdeoptions['api_key'] = $apikey;
-				gde_dx_log("Updated API Key");
-				update_option( 'gde_options', $gdeoptions );
-			}
 		}
 	}
 	
 	return $gdeoptions;
-}
-
-/**
- * Fetch Beta API Key
- *
- * @since   2.5.0.1
- * @return  string Stored or newly generated API key, or blank value.
- * @note	This should only run once on activation so no transient is necessary
- */
-function gde_get_api_key( $ver ) {
-	global $current_user;
-	
-	if ( is_multisite() ) {
-		$gdeglobals = get_site_option( 'gde_globals' );
-		$api = $gdeglobals['api_key'];
-	} else {
-		$gdeoptions = get_option( 'gde_options' );
-		if ( isset( $gdeoptions['api_key'] ) ) {
-			$api = $gdeoptions['api_key'];
-		} else {
-			$api = "";
-		}
-	}
-	
-	if ( ! empty ( $api ) ) {
-		gde_dx_log("API key already set: $api");
-		return $api;
-	} else {
-		gde_dx_log("Requesting new API key");
-		get_currentuserinfo();
-		$keystring = $current_user->user_login . $current_user->user_email;
-		if ( empty($keystring) ) {
-			$keystring = "John146JesussaidtohimIamthewaythetruthandthelifenoonecomestotheFatherexceptthroughMe";
-		}
-		$keystring = str_shuffle( preg_replace("/[^A-Za-z0-9]/", "", $keystring ) );
-		
-		// attempt get new key
-		$api_url = GDE_BETA_API . "keygen/$keystring?p=gde&v=" . $ver;
-		$response = wp_remote_get( $api_url );
-		
-		if ( is_wp_error( $response ) ) {
-			$error = $response->get_error_message();
-			gde_dx_log("API Error: " . $error);
-			// can't get response
-			return '';
-		} else {
-			if ( $json = json_decode( wp_remote_retrieve_body( $response ) ) ) {
-				if ( isset( $json->api_key ) ) {
-					$key = $json->api_key;
-				}
-				if ( ! empty( $key ) ) {
-					gde_dx_log("API Key: $key");
-					return $key;
-				} else {
-					gde_dx_log("API returned empty response");
-					// empty value response
-					return '';
-				}
-			} else {
-				// invalid response
-				gde_dx_log("API returned invalid response");
-				return '';
-			}
-		}
-	}
 }
 
 /**
