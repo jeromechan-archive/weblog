@@ -37,6 +37,14 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'romangie_scripts' );
 
+    // Assembled Font-Awesome 3.2.1, added by chenjinlong 20150412
+    add_action( 'wp_enqueue_scripts', 'load_fontawesome_styles' );
+    function load_fontawesome_styles(){
+        global $wp_styles;
+        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/framework/font-awesome/css/font-awesome.min.css' );
+        wp_enqueue_style( 'font-awesome-ie7', get_template_directory_uri() . '/framework/font-awesome/css/font-awesome-ie7.min.css' );
+        $wp_styles->add_data( 'font-awesome-ie7', 'conditional', 'lte IE 7' );
+    }
 
 	// Add home to the link list and to the main menu
 	function romangie_page_menu_args( $romangie_args ) {
@@ -214,8 +222,6 @@ function romangie_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'romangie_wp_title', 10, 2 );
-
-
 
 
 ?>
