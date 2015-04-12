@@ -37,13 +37,14 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'romangie_scripts' );
 
-    // Assembled Font-Awesome 3.2.1, added by chenjinlong 20150412
+    // Assembled Font-Awesome 4.3.0, added by chenjinlong 20150412
     add_action( 'wp_enqueue_scripts', 'load_fontawesome_styles' );
     function load_fontawesome_styles(){
         global $wp_styles;
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/framework/font-awesome/css/font-awesome.min.css' );
-        wp_enqueue_style( 'font-awesome-ie7', get_template_directory_uri() . '/framework/font-awesome/css/font-awesome-ie7.min.css' );
-        $wp_styles->add_data( 'font-awesome-ie7', 'conditional', 'lte IE 7' );
+        // 支持IE7的FAW框架为3.2.1以下版本，4.3.0不支持IE7
+        // wp_enqueue_style( 'font-awesome-ie7', get_template_directory_uri() . '/framework/font-awesome/css/font-awesome-ie7.min.css' );
+        // $wp_styles->add_data( 'font-awesome-ie7', 'conditional', 'lte IE 7' );
     }
 
 	// Add home to the link list and to the main menu
