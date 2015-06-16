@@ -424,7 +424,7 @@ img.wp-post-image {
 
 .entry h3, .entry h4, .entry h5, .entry h6, .comment-content h3, .comment-content h4, .comment-content h5, .comment-content h6 {
 	font-weight: normal;
-	font-style: italic;
+	/*font-style: italic;*/
 	color: #777;
 	margin: 20px 0 10px;
 }
