@@ -1,1 +1,2 @@
 Sitemap:http://www.aboutcoder.com/sitemap.xml
+Sitemap:http://www.aboutcoder.com/sitemap_baidu.xml
